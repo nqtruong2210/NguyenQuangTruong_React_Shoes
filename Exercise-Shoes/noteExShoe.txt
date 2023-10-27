@@ -1,0 +1,33 @@
+1. Tạo ra bài tập Shoes.jsx
+
+2. Import dữ liệu vào từ dataShoes.json
+Cú pháp: import dataJson from "./dataShoes.json";
+- dataJson là một tên tự đặt để gọi ra
+
+3. Truyền dữ liệu data từ props xuống ProductList
+- Trong mảng cha Ex-Shoes, gọi ra jsx con cần truyền thêm thuộc tính data = {dataJson}
+- Con nhận thuộc tính bằng 1 props, bóc destructoring ra 
+Ex: const {data, } = props; // Dữ liệu data từ Ex-Shoes sẽ được truyền xuống
+- Gọi ra jsx con cần truyền thuộc tính xuống sau đó :
+- Sử dụng map((value,index)=>{}) để lọc qua data, lưu ý khi sử dụng map thì map sẽ có 1 key
+Ex: data.map((value,index)=>{
+    key = value.id,
+    product = value; //product để lấy toàn bộ data(Đặt tên để truyền xuống)
+})
+
+4. Truyền dữ liệu từ props xuống ProductItem
+- Sau khi nhận dữ liệu product(cũng chính là data) từ Component cha thì props để lấy ra dữ liệu vừa được truyền xuống
+Ex: const{product} = props
+- Tạo UI (Tạo sẵn UI hiển thị để CSS trước cho đẹp)
+
+5. Tạo useState để thay đổi dữ liệu qua các lần render
+add setDetail vào onClick để render ra đúng các giá trị thông qua thuộc tính key.
+
+-----------
+
+---Chức năng---
+--Chức năng cần làm:
+
+1. Click "Buy" push sản phẩm vào giỏ hàng
+2. Click trùng sản phẩm tăng Quantity
+3. Click + - tăng giảm sản phẩm
